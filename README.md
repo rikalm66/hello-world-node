@@ -11,7 +11,7 @@ helm repo add sealed-secrets https://bitnami-labs.github.io/sealed-secrets
 helm repo update
 helm install sealed-secrets -n kube-system --set-string fullnameOverride=sealed-secrets-controller sealed-secrets/sealed-secrets
 ```
-This will install the the Bitnami Sealed secrets cluster-side controller in the `kube-system` namespace and overrides the controller name, default set to `sealed-secrets` by the `helm chart`. The `kubeseal` utillity tries to access the controller with the name `sealed-secrets-controller`.
+This will install the the Bitnami Sealed secrets cluster-side controller in the `kube-system` namespace and overrides the controller name, default set to `sealed-secrets` by the `helm chart`. The `kubeseal` utillity tries to access the controller with the name `sealed-secrets-controller`in the namespace `kube-system`.
 With this you don't have to pass `--controller-name=sealed-secrets` and `--controller-namespace=kube-system` when using the `kubeseal` utillity.
 
 ## To create a `sealed secret`
